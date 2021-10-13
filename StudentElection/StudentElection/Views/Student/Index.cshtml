@@ -1,0 +1,63 @@
+﻿@model IEnumerable<StudentElection.Models.Student>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.studentname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DOB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.branch)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.yearofjoining)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mobilenumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.password)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.studentname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DOB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.branch)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.yearofjoining)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mobilenumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.password)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.rollno }) |
+            @Html.ActionLink("Details", "Details", new { id=item.rollno }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.rollno })
+        </td>
+    </tr>
+}
+
+</table>
